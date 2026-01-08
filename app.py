@@ -80,6 +80,28 @@ button[aria-label="View profile"] {
     display: none !important;
 }
 
+/* ===== STREAMLIT CLOUD FINAL OVERRIDES ===== */
+
+/* Hide top-right fork + github icon */
+[data-testid="stToolbar"] button,
+[data-testid="stToolbar"] a {
+    visibility: hidden !important;
+}
+
+/* Hide bottom-right profile avatar */
+[data-testid="stProfileAvatar"],
+img[src*="avatar"],
+img[src*="profile"] {
+    visibility: hidden !important;
+}
+
+/* Attempt to hide red streamlit button (best effort) */
+[data-testid="stFloatingActionButton"] {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+
 </style>
 """, unsafe_allow_html=True)
 
