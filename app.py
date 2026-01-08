@@ -101,6 +101,31 @@ img[src*="profile"] {
     pointer-events: none !important;
 }
 
+/* ===== REMOVE BOTTOM RIGHT GITHUB PROFILE + RED BADGE ===== */
+
+/* Profile picture */
+img[src*="githubusercontent.com"],
+img[src*="avatars"],
+img[alt*="Nitish"],
+img[alt*="profile"] {
+    display: none !important;
+}
+
+/* Red "Created by" badge */
+div[style*="position: fixed"][style*="bottom"],
+div[style*="bottom: 0"],
+div[style*="right: 0"],
+div[class*="st-emotion-cache"] svg,
+div[class*="st-emotion-cache"] button {
+    display: none !important;
+}
+
+/* Streamlit cloud footer branding */
+footer {
+    visibility: hidden !important;
+}
+
+
 
 </style>
 """, unsafe_allow_html=True)
