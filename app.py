@@ -54,8 +54,35 @@ button {
     color: white !important;
     border: none !important;
 }
+
+/* ========================= */
+/* REMOVE ONLY THESE ELEMENTS */
+/* ========================= */
+
+/* Top right Fork button */
+button[title="Fork"] {
+    display: none !important;
+}
+
+/* Top right GitHub icon */
+a[title="View source on GitHub"] {
+    display: none !important;
+}
+
+/* Bottom right red Streamlit button */
+[data-testid="stFloatingActionButton"] {
+    display: none !important;
+}
+
+/* Bottom right profile picture */
+img[alt="profile"],
+button[aria-label="View profile"] {
+    display: none !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
+
 
 
 
