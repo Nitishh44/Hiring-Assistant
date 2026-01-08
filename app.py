@@ -2,17 +2,57 @@ import streamlit as st
 
 st.markdown("""
 <style>
-/* Page background */
+
+/* ===== GLOBAL RESET ===== */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* ===== REMOVE STREAMLIT CLOUD BRANDING ===== */
+
+/* Bottom right floating container */
+div[data-testid="stToolbar"] {
+    display: none !important;
+}
+
+div[data-testid="stDecoration"] {
+    display: none !important;
+}
+
+div[data-testid="stStatusWidget"] {
+    display: none !important;
+}
+
+div[class^="viewerBadge"] {
+    display: none !important;
+}
+
+/* Remove GitHub profile image */
+img[src*="github"],
+img[src*="avatar"],
+img[src*="usercontent"],
+img[alt*="profile"] {
+    display: none !important;
+}
+
+/* Remove 'Created by' badge */
+a[href*="streamlit"],
+a[href*="github"],
+button[title],
+button[aria-label] {
+    display: none !important;
+}
+
+/* ===== YOUR UI STYLING ===== */
+
 .stApp {
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-/* Force all text to be visible */
 html, body, [class*="css"] {
     color: #ffffff !important;
 }
 
-/* Chat message cards */
 [data-testid="stChatMessage"] {
     background-color: rgba(255, 255, 255, 0.12);
     border-radius: 14px;
@@ -22,19 +62,14 @@ html, body, [class*="css"] {
     color: #ffffff !important;
 }
 
-/* User message */
 [data-testid="stChatMessage"][aria-label="user"] {
     background-color: rgba(0, 123, 255, 0.25);
-    color: #ffffff !important;
 }
 
-/* Assistant message */
 [data-testid="stChatMessage"][aria-label="assistant"] {
     background-color: rgba(40, 167, 69, 0.25);
-    color: #ffffff !important;
 }
 
-/* Input box */
 textarea, input {
     background-color: #1e1e1e !important;
     color: #ffffff !important;
@@ -42,12 +77,10 @@ textarea, input {
     border: 1px solid #444 !important;
 }
 
-/* Progress bar */
 div[role="progressbar"] > div {
     background-color: #00ffcc !important;
 }
 
-/* Buttons */
 button {
     border-radius: 10px !important;
     background-color: #00b894 !important;
@@ -55,80 +88,9 @@ button {
     border: none !important;
 }
 
-/* ========================= */
-/* REMOVE ONLY THESE ELEMENTS */
-/* ========================= */
-
-/* Top right Fork button */
-button[title="Fork"] {
-    display: none !important;
-}
-
-/* Top right GitHub icon */
-a[title="View source on GitHub"] {
-    display: none !important;
-}
-
-/* Bottom right red Streamlit button */
-[data-testid="stFloatingActionButton"] {
-    display: none !important;
-}
-
-/* Bottom right profile picture */
-img[alt="profile"],
-button[aria-label="View profile"] {
-    display: none !important;
-}
-
-/* ===== STREAMLIT CLOUD FINAL OVERRIDES ===== */
-
-/* Hide top-right fork + github icon */
-[data-testid="stToolbar"] button,
-[data-testid="stToolbar"] a {
-    visibility: hidden !important;
-}
-
-/* Hide bottom-right profile avatar */
-[data-testid="stProfileAvatar"],
-img[src*="avatar"],
-img[src*="profile"] {
-    visibility: hidden !important;
-}
-
-/* Attempt to hide red streamlit button (best effort) */
-[data-testid="stFloatingActionButton"] {
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
-
-/* ===== REMOVE BOTTOM RIGHT GITHUB PROFILE + RED BADGE ===== */
-
-/* Profile picture */
-img[src*="githubusercontent.com"],
-img[src*="avatars"],
-img[alt*="Nitish"],
-img[alt*="profile"] {
-    display: none !important;
-}
-
-/* Red "Created by" badge */
-div[style*="position: fixed"][style*="bottom"],
-div[style*="bottom: 0"],
-div[style*="right: 0"],
-div[class*="st-emotion-cache"] svg,
-div[class*="st-emotion-cache"] button {
-    display: none !important;
-}
-
-/* Streamlit cloud footer branding */
-footer {
-    visibility: hidden !important;
-}
-
-
-
 </style>
 """, unsafe_allow_html=True)
+
 
 
 
